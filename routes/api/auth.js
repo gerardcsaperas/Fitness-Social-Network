@@ -53,8 +53,6 @@ router.post(
 
 			if (!isMatch) {
 				return res.status(400).json({ errors: [ { msg: 'Invalid credentials' } ] });
-			} else {
-				res.status();
 			}
 
 			// Return jsonwebtoken
