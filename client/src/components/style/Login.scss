@@ -1,0 +1,114 @@
+$bgprimarycolor: #545f82;
+$bgsecondarycolor: #272636;
+$breakpointmobile: 600px;
+$breakpointtablet: 768px;
+$breakpointsm: 950px;
+$iphone5se: 568px;
+#Login {
+    height: 100vh;
+    position: relative;
+    background-image: url('../images/barbell.jpeg');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 10%;
+        transform: skew(-45deg);
+        width: 200%;
+        height: 100%;
+        background-color: $bgsecondarycolor;
+        opacity: .8;
+        overflow: hidden;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        transform: skew(-45deg);
+        width: 200%;
+        height: 100%;
+        background-color: $bgprimarycolor;
+        opacity: .8;
+    }
+    @media (max-width: $breakpointmobile) {
+        &:after {
+            transform: skew(-5deg);
+            left: 5%;
+        }
+        &:before {
+            transform: none;
+        }
+    }
+    #LoginBox {
+        position: absolute;
+        margin: auto;
+        min-width: 361px;
+        z-index: 1;
+        top: 30vh;
+        right: 10%;
+        text-align: center;
+        @media (max-width: $breakpointsm) {
+            top: 40vh;
+            right: 5%;
+        }
+        @media (max-width: $breakpointtablet) {
+            top: 50vh;
+            right: 5%;
+        }
+        @media (max-width: $breakpointmobile) {
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        @media (max-height: $iphone5se) {
+            min-width: 0px;
+        }
+        // Add margin to Material UI's TextField's components
+        .MuiFormControl-root {
+            margin: 1rem;
+            background: white;
+            border-radius: 5px;
+            &:focus {
+                border: black;
+            }
+        }
+        .MuiInputLabel-outlined.MuiInputLabel-shrink {
+            transform: translate(14px, 0px) scale(0.75);
+        }
+        h1,
+        p,
+        button {
+            color: whitesmoke;
+            margin: 0.75rem;
+        }
+        h1 {
+            font-size: 4rem;
+            @media (max-height: $iphone5se) {
+                display: none;
+            }
+        }
+        p {
+            font-size: 3rem;
+            font-weight: 300;
+            @media (max-height: $iphone5se) {
+                font-size: 2rem;
+            }
+        }
+        button {
+            font-size: 1.5rem;
+            width: 200px;
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+}

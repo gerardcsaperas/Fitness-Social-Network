@@ -1,4 +1,93 @@
-$bgprimarycolor: lightblue;
-body {
-    background-color: $bgcolor;
+$bgprimarycolor: #545f82;
+$bgsecondarycolor: #272636;
+$breakpointmobile: 600px;
+$breakpointtablet: 768px;
+$breakpointsm: 950px;
+$iphone5se: 568px;
+#landing {
+    height: 100vh;
+    position: relative;
+    background-image: url('../images/barbell.jpeg');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 10%;
+        transform: skew(-45deg);
+        width: 200%;
+        height: 100%;
+        background-color: $bgsecondarycolor;
+        opacity: .8;
+        overflow: hidden;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        transform: skew(-45deg);
+        width: 200%;
+        height: 100%;
+        background-color: $bgprimarycolor;
+        opacity: .8;
+    }
+    @media (max-width: $breakpointmobile) {
+        &:after {
+            transform: skew(-5deg);
+            left: 5%;
+        }
+        &:before {
+            transform: none;
+        }
+    }
+    #landingText {
+        position: absolute;
+        min-width: 361px;
+        z-index: 1;
+        top: 30vh;
+        right: 10%;
+        text-align: center;
+        @media (max-width: $breakpointsm) {
+            top: 40vh;
+            right: 5%;
+        }
+        @media (max-width: $breakpointtablet) {
+            top: 50vh;
+            right: 5%;
+        }
+        @media (max-width: $breakpointmobile) {
+            top: 5vh;
+            left: 0;
+            right: 0;
+        }
+        @media (max-height: $iphone5se) {
+            min-width: 0px;
+        }
+    }
+    h1,
+    h2,
+    h3,
+    button {
+        color: whitesmoke;
+        margin: 1rem;
+    }
+    h1 {
+        font-size: 4rem;
+    }
+    h2,
+    h3 {
+        font-size: 3rem;
+        font-weight: 300;
+        @media (max-height: $iphone5se) {
+            font-size: 2rem;
+        }
+    }
+    button {
+        font-size: 1.5rem;
+    }
+    a {
+        text-decoration: none;
+    }
 }
